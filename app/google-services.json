@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "169091812428",
+    "firebase_url": "https://hackgt7-c5f97.firebaseio.com",
+    "project_id": "hackgt7-c5f97",
+    "storage_bucket": "hackgt7-c5f97.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:169091812428:android:09a58daf3c28cf2ef8f8e9",
+        "android_client_info": {
+          "package_name": "com.codebusters.medelivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "169091812428-8p4ge3l6o70u5h5nu3vm6jgbrgrhhgtn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPflPaa_DTx56M6gFgVaje3BYOsRbJT1o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "169091812428-8p4ge3l6o70u5h5nu3vm6jgbrgrhhgtn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
