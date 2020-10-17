@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button loginButton;
     private Button registerButton;
     private TextView message;
+    private String emailText;
 
 
     @Override
@@ -64,6 +66,10 @@ public class LoginActivity extends AppCompatActivity {
                     // Sign in success, update UI with the signed-in user's information
                     Toast.makeText(getApplicationContext(), "Successfully created an account!", Toast.LENGTH_SHORT).show();
                     FirebaseUser user = mAuth.getCurrentUser();
+                    if (user != null) {
+                        // Name, email address, and profile photo Url
+                        emailText = user.getEmail();
+                    }
 
                     Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
                     startActivity(intent);
@@ -86,6 +92,10 @@ public class LoginActivity extends AppCompatActivity {
                     // Sign in success, update UI with the signed-in user's information
                     Toast.makeText(getApplicationContext(), "Successfully signed in!", Toast.LENGTH_SHORT).show();
                     FirebaseUser user = mAuth.getCurrentUser();
+                    if (user != null) {
+                        // Name, email address, and profile photo Url
+                        emailText = user.getEmail();
+                    }
 
                     Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
                     startActivity(intent);
@@ -95,8 +105,10 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+    }
 
-
+    public String getEmail() {
+        return emailText;
     }
 
 
