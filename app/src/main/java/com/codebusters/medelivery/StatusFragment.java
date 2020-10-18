@@ -13,6 +13,8 @@ package com.codebusters.medelivery;
         import androidx.recyclerview.widget.LinearLayoutManager;
         import androidx.recyclerview.widget.RecyclerView;
 
+        import java.util.ArrayList;
+
 public class StatusFragment extends Fragment {
     private static final String TAG = "StatusFragment";
 
@@ -31,14 +33,14 @@ public class StatusFragment extends Fragment {
         layoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(layoutManager);
 
-        String[] myDataset = setupData();
+        ArrayList<String> myDataset = setupData();
         mAdapter = new MyAdapter(myDataset);
         recyclerView.setAdapter(mAdapter);
 
         return view;
     }
 
-    private String[] setupData() {
+    private ArrayList<String> setupData() {
         String[] user_medical_items = new String[3];
         user_medical_items[0] = "Covid Testing Kit";
         user_medical_items[1] = "Blood Glucose Monitor";
