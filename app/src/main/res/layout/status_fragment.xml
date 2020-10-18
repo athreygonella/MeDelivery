@@ -27,4 +27,5 @@ android:layout_height="match_parent">
     android:textColor="#090909"
     app:layout_constraintBottom_toTopOf="@+id/medical_kits"
     app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

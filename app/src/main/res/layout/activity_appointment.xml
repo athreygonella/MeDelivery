@@ -10,11 +10,14 @@
         android:id="@+id/appointmentSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:layout_marginTop="25dp"
         android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appointmentLabel" />
+        android:layout_marginBottom="552dp"
+        android:spinnerMode="dropdown"
 
     <TextView
         android:id="@+id/appointmentLabel"
@@ -25,6 +28,8 @@
         android:layout_marginTop="25dp"
         android:text="Available Appointments"
         android:textSize="18sp"
+
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -102,4 +107,12 @@
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appointmentSpinner" />
+
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="4dp"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

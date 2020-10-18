@@ -11,8 +11,10 @@
         android:theme="@style/Theme.MeDelivery">
         <activity android:name=".AppointmentActivity"></activity>
         <activity android:name=".SignInActivity" />
+
         <activity android:name=".MedicalProfile"
             android:parentActivityName=".MainActivity"/>
+
         <activity android:name=".HospitalActivity" />
         <activity
             android:name=".DashboardActivity"
