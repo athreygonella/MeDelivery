@@ -67,6 +67,8 @@ public class MedicalProfile extends AppCompatActivity {
             }
         });
         setContentView(R.layout.activity_medical_profile);
+        setTitle("Medical Profile");
+
         nameFill = (EditText) findViewById(R.id.editTextTextPersonName);
         dobFill = (EditText) findViewById(R.id.editTextDate);
         sexFill = (EditText) findViewById(R.id.sexEditText);
