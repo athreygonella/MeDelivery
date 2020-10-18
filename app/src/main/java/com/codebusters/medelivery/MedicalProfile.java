@@ -38,7 +38,7 @@ public class MedicalProfile extends AppCompatActivity {
     private EditText convulsionsEditText;
     private TextView heartTroubleFill;
     private EditText heartTroubleEditText;
-    private Button backToDashboardButton;
+    private Button submitMedicalInfoButton;
     private FirebaseAuth mAuth;
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -62,7 +62,7 @@ public class MedicalProfile extends AppCompatActivity {
                         Log.d(TAG, "DocumentSnapshot data: " + document.getData());
                     } else {
                         Log.d(TAG, "No such document");
-                            }
+                    }
                 } else {
                     Log.d(TAG, "get failed with ", task.getException());
                 }
@@ -82,13 +82,13 @@ public class MedicalProfile extends AppCompatActivity {
         convulsionsEditText = (EditText) findViewById(R.id.convulsionsEditText);
         heartTroubleFill = (TextView) findViewById(R.id.heartTroubleTextView);
         heartTroubleEditText = (EditText) findViewById(R.id.heartTroubleEditText);
-        backToDashboardButton = (Button) findViewById(R.id.submitMedicalInfoButton);
+        submitMedicalInfoButton = (Button) findViewById(R.id.submitMedicalInfoButton);
 
         if (document != null) {
             updateUserMedicalData();
         }
 
-        backToDashboardButton.setOnClickListener(new View.OnClickListener() {
+        submitMedicalInfoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (nameFill.getText().toString().equals("")) {

@@ -39,7 +39,6 @@ public class StatusFragment extends Fragment {
     }
 
     private String[] setupData() {
-        // Sets up data, later will get items from user's database
         String[] user_medical_items = new String[3];
         user_medical_items[0] = "Covid Testing Kit";
         user_medical_items[1] = "Blood Glucose Monitor";
