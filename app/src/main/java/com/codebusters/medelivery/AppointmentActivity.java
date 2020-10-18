@@ -18,6 +18,8 @@ import java.util.ArrayList;
 
 public class AppointmentActivity extends AppCompatActivity {
 
+    private Data data = new Data();
+
     private Spinner appointmentSpinner;
     ArrayList<String> appointments = new ArrayList<>();
 
@@ -60,7 +62,7 @@ public class AppointmentActivity extends AppCompatActivity {
         appointmentSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+                data.setAppointmentTime(appointmentSpinner.getSelectedItem().toString());
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -74,21 +76,27 @@ public class AppointmentActivity extends AppCompatActivity {
         device6CheckBox = (CheckBox) findViewById(R.id.device6CheckBox);
         if (device1CheckBox.isChecked()) {
             //put device in status page
+            data.add(device1CheckBox.getText().toString());
         }
         if (device2CheckBox.isChecked()) {
             //put device in status page
+            data.add(device2CheckBox.getText().toString());
         }
         if (device3CheckBox.isChecked()) {
             //put device in status page
+            data.add(device3CheckBox.getText().toString());
         }
         if (device4CheckBox.isChecked()) {
             //put device in status page
+            data.add(device4CheckBox.getText().toString());
         }
         if (device5CheckBox.isChecked()) {
             //put device in status page
+            data.add(device5CheckBox.getText().toString());
         }
         if (device6CheckBox.isChecked()) {
             //put device in status page
+            data.add(device6CheckBox.getText().toString());
         }
 
         submitApptAndDevicesButton = (Button) findViewById(R.id.submitApptAndDevicesButton);
