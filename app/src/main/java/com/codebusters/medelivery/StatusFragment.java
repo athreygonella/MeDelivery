@@ -19,7 +19,6 @@ public class StatusFragment extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
-    private Button button;
 
     @Nullable
     @Override
@@ -35,15 +34,6 @@ public class StatusFragment extends Fragment {
         String[] myDataset = setupData();
         mAdapter = new MyAdapter(myDataset);
         recyclerView.setAdapter(mAdapter);
-
-        button = (Button) view.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity().getApplicationContext(), AppointmentActivity.class);
-                startActivity(intent);
-            }
-        });
 
         return view;
     }
