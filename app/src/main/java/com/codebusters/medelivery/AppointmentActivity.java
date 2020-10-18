@@ -74,30 +74,7 @@ public class AppointmentActivity extends AppCompatActivity {
         device4CheckBox = (CheckBox) findViewById(R.id.device4CheckBox);
         device5CheckBox = (CheckBox) findViewById(R.id.device5CheckBox);
         device6CheckBox = (CheckBox) findViewById(R.id.device6CheckBox);
-        if (device1CheckBox.isChecked()) {
-            //put device in status page
-            data.add(device1CheckBox.getText().toString());
-        }
-        if (device2CheckBox.isChecked()) {
-            //put device in status page
-            data.add(device2CheckBox.getText().toString());
-        }
-        if (device3CheckBox.isChecked()) {
-            //put device in status page
-            data.add(device3CheckBox.getText().toString());
-        }
-        if (device4CheckBox.isChecked()) {
-            //put device in status page
-            data.add(device4CheckBox.getText().toString());
-        }
-        if (device5CheckBox.isChecked()) {
-            //put device in status page
-            data.add(device5CheckBox.getText().toString());
-        }
-        if (device6CheckBox.isChecked()) {
-            //put device in status page
-            data.add(device6CheckBox.getText().toString());
-        }
+
 
         submitApptAndDevicesButton = (Button) findViewById(R.id.submitApptAndDevicesButton);
         submitApptAndDevicesButton.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +83,38 @@ public class AppointmentActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Your appointment has been confirmed and your order for medical devices has been placed!",
                         Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), DashboardActivity.class);
+                Bundle bundle = new Bundle();
+
+                bundle.putString("Appointment_Time", data.getAppointmentTime());
+
+                if (device1CheckBox.isChecked()) {
+                    //put device in status page
+                    data.addToInventory(device1CheckBox.getText().toString());
+                }
+                if (device2CheckBox.isChecked()) {
+                    //put device in status page
+                    data.addToInventory(device2CheckBox.getText().toString());
+                }
+                if (device3CheckBox.isChecked()) {
+                    //put device in status page
+                    data.addToInventory(device3CheckBox.getText().toString());
+                }
+                if (device4CheckBox.isChecked()) {
+                    //put device in status page
+                    data.addToInventory(device4CheckBox.getText().toString());
+                }
+                if (device5CheckBox.isChecked()) {
+                    //put device in status page
+                    data.addToInventory(device5CheckBox.getText().toString());
+                }
+                if (device6CheckBox.isChecked()) {
+                    //put device in status page
+                    data.addToInventory(device6CheckBox.getText().toString());
+                }
+
+                bundle.putStringArrayList("Medical_Devices", data.getInventory());
+
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });

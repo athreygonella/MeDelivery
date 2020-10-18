@@ -1,17 +1,20 @@
 package com.codebusters.medelivery;
 
-        import android.content.Intent;
-        import android.os.Bundle;
-        import android.view.LayoutInflater;
-        import android.view.View;
-        import android.view.ViewGroup;
-        import android.widget.Button;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
-        import androidx.annotation.NonNull;
-        import androidx.annotation.Nullable;
-        import androidx.fragment.app.Fragment;
-        import androidx.recyclerview.widget.LinearLayoutManager;
-        import androidx.recyclerview.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class StatusFragment extends Fragment {
     private static final String TAG = "StatusFragment";
@@ -31,20 +34,29 @@ public class StatusFragment extends Fragment {
         layoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(layoutManager);
 
-        String[] myDataset = setupData();
-        mAdapter = new MyAdapter(myDataset);
+        TextView time = view.findViewById(R.id.time);
+
+        Bundle bundlefromPrev = getActivity().getIntent().getExtras();
+        if (bundlefromPrev != null) {
+            String appointmentTime = bundlefromPrev.getString("Appointment_Time");
+            time.setText(appointmentTime);
+
+            ArrayList<String> medicalDevices = bundlefromPrev.getStringArrayList("Medical_Devices");
+            ArrayList<String> myDataset = setupData(medicalDevices);
+            mAdapter = new MyAdapter(myDataset);
+        }
+
         recyclerView.setAdapter(mAdapter);
 
         return view;
     }
 
-    private String[] setupData() {
-        String[] user_medical_items = new String[3];
-        user_medical_items[0] = "Covid Testing Kit";
-        user_medical_items[1] = "Blood Glucose Monitor";
-        user_medical_items[2] = "Body Temperature Monitors";
-        return user_medical_items;
+    private ArrayList<String> setupData(ArrayList<String> list) {
+        ArrayList<String> devices = new ArrayList<>();
+        for (String item : list) {
+            devices.add(item);
+        }
+        return devices;
     }
-
 }
 

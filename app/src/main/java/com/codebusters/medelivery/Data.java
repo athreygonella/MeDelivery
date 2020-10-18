@@ -1,5 +1,8 @@
 package com.codebusters.medelivery;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 
 public class Data {
@@ -7,7 +10,7 @@ public class Data {
     private String appointmentTime;
     private String appointmentPlace;
 
-    public void add(String s) {
+    public void addToInventory(String s) {
         inventory.add(s);
     }
 
@@ -18,4 +21,17 @@ public class Data {
     public void setAppointmentPlace(String place) {
         appointmentPlace = place;
     }
+
+    public ArrayList<String> getInventory() {
+        return inventory;
+    }
+
+    public String getAppointmentTime() {
+        return appointmentTime;
+    }
+
+    public String getAppointmentPlace() {
+        return appointmentPlace;
+    }
+
 }
