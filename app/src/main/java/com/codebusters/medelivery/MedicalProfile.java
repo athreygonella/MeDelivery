@@ -3,10 +3,7 @@ package com.codebusters.medelivery;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,11 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -85,7 +78,7 @@ public class MedicalProfile extends AppCompatActivity {
         convulsionsEditText = (EditText) findViewById(R.id.convulsionsEditText);
         heartTroubleFill = (TextView) findViewById(R.id.heartTroubleTextView);
         heartTroubleEditText = (EditText) findViewById(R.id.heartTroubleEditText);
-        backToDashboardButton = (Button) findViewById(R.id.backToDashboardButton);
+        backToDashboardButton = (Button) findViewById(R.id.submitMedicalInfoButton);
 
         if (document != null) {
             updateUserMedicalData();
@@ -95,21 +88,21 @@ public class MedicalProfile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Map<String, Object> userData = new HashMap<>();
-                userData.put("name", nameFill.toString());
-                userData.put("dob", dobFill.toString());
-                userData.put("sex", sexFill.toString());
-                userData.put("address", addressFill.toString());
-                userData.put("allergies", allergiesFill.toString());
-                userData.put("diabetes", diabetesEditText.toString());
-                userData.put("convulsions", convulsionsEditText.toString());
-                userData.put("heart trouble", heartTroubleEditText.toString());
+                userData.put("name", nameFill.getText().toString());
+                userData.put("dob", dobFill.getText().toString());
+                userData.put("sex", sexFill.getText().toString());
+                userData.put("address", addressFill.getText().toString());
+                userData.put("allergies", allergiesFill.getText().toString());
+                userData.put("diabetes", diabetesEditText.getText().toString());
+                userData.put("convulsions", convulsionsEditText.getText().toString());
+                userData.put("heart trouble", heartTroubleEditText.getText().toString());
 
-                db.collection("users")
-                        .add(userData)
-                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                db.collection("users").document(email)
+                        .set(userData)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
-                            public void onSuccess(DocumentReference documentReference) {
-                                Log.d(TAG, "DocumentSnapshot added with ID: " + documentReference.getId());
+                            public void onSuccess(Void aVoid) {
+                                Log.d(TAG, "DocumentSnapshot added with ID: ");
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
