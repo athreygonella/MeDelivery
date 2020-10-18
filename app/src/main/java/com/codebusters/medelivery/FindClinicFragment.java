@@ -27,9 +27,6 @@ public class FindClinicFragment extends Fragment {
     private static final String API_KEY = "AIzaSyCttWOywG3gE8VfM17aGQyDl-306fMMPwE";
 
     private EditText streetAddress;
-    private EditText city;
-    private EditText state;
-    private EditText zipCode;
     private Button submitLocationButton;
 
 
@@ -40,26 +37,17 @@ public class FindClinicFragment extends Fragment {
         View view = inflater.inflate(R.layout.findclinic_fragment, container, false);
 
         streetAddress = (EditText) getActivity().findViewById(R.id.streetAddress);
-        city = (EditText) getActivity().findViewById(R.id.city);
-        state = (EditText) getActivity().findViewById(R.id.state);
-        zipCode = (EditText) getActivity().findViewById(R.id.zipCode);
 
-        submitLocationButton = (Button) getActivity().findViewById(R.id.submitLocationButton);
+        submitLocationButton = (Button) view.findViewById(R.id.submitLocationButton);
         submitLocationButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 String streetAddressString = streetAddress.getText().toString();
-                String cityString = city.getText().toString();
-                String stateString = state.getText().toString();
-                String zipCodeString = zipCode.getText().toString();
-
                 try {
                     ArrayList<Hospital> hospitals = Parser.parse(streetAddressString);
                 } catch (Exception e) {
                     Toast.makeText(getActivity().getApplicationContext(), "Parsing Failed :)", Toast.LENGTH_SHORT);
                 }
-
-
             }
         });
 
