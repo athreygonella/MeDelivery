@@ -43,37 +43,37 @@
             android:id="@+id/device1CheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Device 1" />
+            android:text="Blood Pressure Monitor" />
 
         <CheckBox
             android:id="@+id/device2CheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Device 2" />
+            android:text="Blood Oxygen Sensor" />
 
         <CheckBox
             android:id="@+id/device3CheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Device 3" />
+            android:text="COVID Test" />
 
         <CheckBox
             android:id="@+id/device4CheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Device 4" />
+            android:text="Urine Test" />
 
         <CheckBox
             android:id="@+id/device5CheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Device 5" />
+            android:text="Blood Test" />
 
         <CheckBox
             android:id="@+id/device6CheckBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Device 6" />
+            android:text="Colon Cancer Test Kit" />
     </LinearLayout>
 
     <Button
