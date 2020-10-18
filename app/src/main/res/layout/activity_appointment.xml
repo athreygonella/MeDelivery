@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AppointmentActivity">
+
+    <Spinner
+        android:id="@+id/appointmentSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appointmentLabel" />
+
+    <TextView
+        android:id="@+id/appointmentLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="25dp"
+        android:text="Available Appointments"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/medicalDevicesVerticalLayout"
+        android:layout_width="275dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/devicesLabel">
+
+        <CheckBox
+            android:id="@+id/device1CheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Device 1" />
+
+        <CheckBox
+            android:id="@+id/device2CheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Device 2" />
+
+        <CheckBox
+            android:id="@+id/device3CheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Device 3" />
+
+        <CheckBox
+            android:id="@+id/device4CheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Device 4" />
+
+        <CheckBox
+            android:id="@+id/device5CheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Device 5" />
+
+        <CheckBox
+            android:id="@+id/device6CheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Device 6" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submitApptAndDevicesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginLeft="161dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="161dp"
+        android:layout_marginRight="161dp"
+        android:text="Submit"
+        app:backgroundTint="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/medicalDevicesVerticalLayout" />
+
+    <TextView
+        android:id="@+id/devicesLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="25dp"
+        android:text="Available Devices"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appointmentSpinner" />
+</androidx.constraintlayout.widget.ConstraintLayout>
