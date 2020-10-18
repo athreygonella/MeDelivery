@@ -16,8 +16,8 @@ public class Parser {
 
     private static final String API_KEY = "AIzaSyCttWOywG3gE8VfM17aGQyDl-306fMMPwE";
 
-    public static ArrayList<Hospital> parse(String streetAddress, String city, String state, String zipCode) throws IOException, InterruptedException {
-        String url = createURL1(streetAddress, city, state, zipCode);
+    public static ArrayList<Hospital> parse(String streetAddress) throws IOException, InterruptedException {
+        String url = createURL1(streetAddress);
         double[] coord = getCoord(url);
         double lat = coord[0];
         double lng = coord[1];
@@ -54,14 +54,11 @@ public class Parser {
         return result;
     }
 
-    public static String createURL1 (String streetAddress, String city, String state, String zipCode) {
+    public static String createURL1 (String streetAddress) {
         String start = "https://maps.googleapis.com/maps/api/geocode/json?address=";
         String end = "&key=" + API_KEY;
         streetAddress = streetAddress.trim().replace(" ", "+");
-        city = city.trim().replace(" ", "+");
-        state = state.trim().replace(" ", "+");
-        zipCode = zipCode.trim().replace(" ", "+");
-        String middle = streetAddress + ",+" + city + ",+" + state + ",+" + zipCode;
+        String middle = streetAddress;
         String result = start + middle + end;
         return result;
     }
@@ -101,5 +98,6 @@ public class Parser {
         return response.toString();
     }
 }
+
 
 

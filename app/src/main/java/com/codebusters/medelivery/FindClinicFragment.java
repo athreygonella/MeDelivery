@@ -54,7 +54,7 @@ public class FindClinicFragment extends Fragment {
                 String zipCodeString = zipCode.getText().toString();
 
                 try {
-                    ArrayList<Hospital> hospitals = Parser.parse(streetAddressString, cityString, stateString, zipCodeString);
+                    ArrayList<Hospital> hospitals = Parser.parse(streetAddressString);
                 } catch (Exception e) {
                     Toast.makeText(getActivity().getApplicationContext(), "Parsing Failed :)", Toast.LENGTH_SHORT);
                 }
