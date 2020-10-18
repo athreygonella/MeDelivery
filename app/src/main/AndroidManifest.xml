@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MeDelivery">
-        <activity android:name=".SignInActivity"></activity>
-        <activity android:name=".MedicalProfile"></activity>
-        <activity android:name=".HospitalActivity"></activity>
+        <activity android:name=".AppointmentActivity"></activity>
+        <activity android:name=".SignInActivity" />
+        <activity android:name=".MedicalProfile" />
+        <activity android:name=".HospitalActivity" />
         <activity
             android:name=".DashboardActivity"
             android:label="@string/title_activity_dashboard"

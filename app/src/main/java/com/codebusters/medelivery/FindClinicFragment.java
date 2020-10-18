@@ -1,5 +1,6 @@
 package com.codebusters.medelivery;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,8 +29,6 @@ public class FindClinicFragment extends Fragment {
 
     private EditText streetAddress;
     private Button submitLocationButton;
-
-
 
     @Nullable
     @Override
